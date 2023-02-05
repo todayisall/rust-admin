@@ -11,6 +11,10 @@ name = "bootstrap"
 version = "0.1.0"
 
 [[package]]
+name = "db"
+version = "0.1.0"
+
+[[package]]
 name = "domain"
 version = "0.1.0"
 
