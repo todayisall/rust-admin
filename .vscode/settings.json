@@ -3,6 +3,7 @@
     "chrono",
     "datetime",
     "sqlx",
-    "clippy"
+    "clippy",
+    "thiserror"
   ]
 }

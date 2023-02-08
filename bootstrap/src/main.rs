@@ -1,3 +1,5 @@
+use api::run;
 fn main() {
-    println!("Hello, world!");
+    // 启动api服务
+    run();
 }

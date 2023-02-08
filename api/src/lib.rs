@@ -1,14 +1,23 @@
-pub fn add(left: usize, right: usize) -> usize {
-    left + right
-}
+// api 模块
+mod common;
+mod system;
 
-#[cfg(test)]
-mod tests {
-    use super::*;
+// 路由模块
+mod route;
 
-    #[test]
-    fn it_works() {
-        let result = add(2, 2);
-        assert_eq!(result, 4);
-    }
+use axum::{Router};
+use std::net::SocketAddr;
+
+#[tokio::main]
+pub async fn run() {
+    // build our application with a route
+    let app = Router::new().nest("/api", route::register_router());
+
+    // run it
+    let addr = SocketAddr::from(([127, 0, 0, 1], 8008));
+    println!("listening on {}", addr);
+    axum::Server::bind(&addr)
+        .serve(app.into_make_service())
+        .await
+        .unwrap();
 }
