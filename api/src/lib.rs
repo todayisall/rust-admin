@@ -15,7 +15,7 @@ pub async fn run() {
 
     // run it
     let addr = SocketAddr::from(([127, 0, 0, 1], 8008));
-    println!("listening on {}", addr);
+    println!("listening on {addr}");
     axum::Server::bind(&addr)
         .serve(app.into_make_service())
         .await

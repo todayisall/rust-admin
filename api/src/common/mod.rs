@@ -1,3 +1,3 @@
-mod common;
+mod auth;
 
-pub use common::register_no_auth_routes;
+pub use auth::register_no_auth_routes;
